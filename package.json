@@ -1,0 +1,16 @@
+{
+  "name": "ai-linkedin-bot",
+  "version": "1.0.0",
+  "description": "Autonomous AI & CS LinkedIn Poster",
+  "main": "index.js",
+  "type": "module",
+  "author": "Azaz Asif",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "puppeteer": "^22.0.0",
+    "rss-parser": "^3.13.0"
+  }
+}
