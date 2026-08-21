@@ -12,7 +12,33 @@
         {
             "idea": "When Microservices become a trap: Why monolithic architecture is sometimes better",
             "angles": [
+                "Case Study / Anti-Pattern",
+                "Incident / Lessons Learned"
+            ]
+        }
+    ],
+    "Quality_Engineering": [
+        {
+            "idea": "Cypress vs Playwright: Which modern testing framework is winning the automation race in 2026?",
+            "angles": [
+                "Tools & Technology Comparison",
+                "Architecture / Pro Tip"
+            ]
+        },
+        {
+            "idea": "API Testing pitfalls: Common mistakes when automating test cases with Postman and how to fix them.",
+            "angles": [
+                "Incident / Lessons Learned",
                 "Case Study / Anti-Pattern"
+            ]
+        }
+    ],
+    "Data_Engineering": [
+        {
+            "idea": "The shift from ETL to ELT in modern data pipelines",
+            "angles": [
+                "Architecture / Pro Tip",
+                "Tools & Technology Comparison"
             ]
         }
     ]
