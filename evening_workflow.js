@@ -33,42 +33,57 @@ async function runEveningWorkflow() {
         console.log(`-> Today's Target: [${currentTopic}] + [${currentAngle}]`);
 
         // ==========================================
-        // STEP 2: RSS AGGREGATOR
+        // STEP 2: RSS AGGREGATOR & FALLBACK LOGIC
         // ==========================================
         console.log("2. Fetching Candidate Sources...");
         const sources = JSON.parse(await fs.readFile('./data/sources.json', 'utf-8'));
         const feedUrls = sources[currentTopic] || [];
-
+        
         let allArticles = [];
         for (const url of feedUrls) {
             try {
                 const feed = await parser.parseURL(url);
-                // Get top 5 from each feed
-                const articles = feed.items.slice(0, 5).map(i => `Title: ${i.title}\nSnippet: ${i.contentSnippet}`);
+                const articles = feed.items.slice(0, 5).map(i => `Title: ${i.title}\nSnippet: ${i.contentSnippet || i.content}`);
                 allArticles = allArticles.concat(articles);
             } catch (err) {
                 console.log(`   [Warning] Failed to fetch feed: ${url}`);
             }
         }
 
-        if (allArticles.length === 0) {
-            console.error("No articles found. (Fallback Pool logic will go here). Aborting.");
-            return;
-        }
+        let userPromptContext = "";
 
-        const aggregatedNews = allArticles.slice(0, 8).join('\n\n---\n\n');
+        // 💡 THE FALLBACK LOGIC
+        if (allArticles.length === 0) {
+            console.log("⚠️ No articles found in RSS. Activating Fallback Pool...");
+            const fallbackData = JSON.parse(await fs.readFile('./data/fallback_pool.json', 'utf-8'));
+            const topicFallbacks = fallbackData[currentTopic] || [];
+            
+            // Try to find a fallback idea that matches today's angle
+            const validFallbacks = topicFallbacks.filter(f => f.angles.includes(currentAngle));
+            const selectedFallback = validFallbacks.length > 0 ? validFallbacks[0] : (topicFallbacks[0] || null);
+
+            if (!selectedFallback) {
+                console.error("❌ No fallback idea found for this topic. Aborting.");
+                return;
+            }
+
+            console.log(`   -> Using Fallback Idea: ${selectedFallback.idea}`);
+            userPromptContext = `We don't have latest news today. Instead, write a highly engaging educational post about this specific topic idea:\n"${selectedFallback.idea}"\n\nEnsure it perfectly matches the requested angle and JSON schema.`;
+        } else {
+            const combinedNews = allArticles.slice(0, 8).join('\n\n---\n\n');
+            userPromptContext = `Here are the latest candidate articles for ${currentTopic}:\n\n${combinedNews}\n\nSelect the best one and generate the JSON.`;
+        }
 
         // ==========================================
         // STEP 3: ASSEMBLE CONTENT BLUEPRINT & PROMPT
         // ==========================================
         console.log("3. Loading Content Blueprint & Schema...");
         const filePrefix = getFilePrefix(currentAngle);
-
+        
         const rawPrompt = await fs.readFile(`./prompts/${filePrefix}.prompt`, 'utf-8');
         const blueprint = await fs.readFile(`./content/blueprints/${filePrefix}.json`, 'utf-8');
         const schema = await fs.readFile(`./content/schemas/${filePrefix}.schema.json`, 'utf-8');
 
-        // Inject Blueprint and Schema into the Prompt
         const finalPrompt = rawPrompt
             .replace('{{BLUEPRINT}}', blueprint)
             .replace('{{SCHEMA}}', schema);
@@ -79,15 +94,15 @@ async function runEveningWorkflow() {
         console.log("4. Generating Structured Content via Groq...");
         const aiResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
             method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
-                'Content-Type': 'application/json'
+            headers: { 
+                'Authorization': `Bearer ${process.env.GROQ_API_KEY}`, 
+                'Content-Type': 'application/json' 
             },
             body: JSON.stringify({
-                model: "openai/gpt-oss-120b",
+                model: "openai/gpt-oss-120b", 
                 messages: [
                     { role: "system", content: finalPrompt },
-                    { role: "user", content: `Here are the latest candidate articles for ${currentTopic}:\n\n${aggregatedNews}\n\nSelect the best one and generate the ${currentAngle} JSON.` }
+                    { role: "user", content: userPromptContext } // 💡 Injecting either RSS News OR Fallback Idea here
                 ],
                 response_format: { type: "json_object" }
             })
