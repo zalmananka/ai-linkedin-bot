@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;900&family=Instrument+Serif:ital@1&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #F8F7F3;
+            width: 1080px;
+            height: 1080px;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #111;
+        }
+
+        .badge {
+            background: #5E6AD2;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 16px;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .title {
+            font-size: 55px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-top: 20px;
+        }
+
+        .title span {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            color: #5E6AD2;
+            font-weight: 400;
+        }
+
+        .context {
+            font-size: 22px;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        .split-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            height: 500px;
+        }
+
+        .card {
+            flex: 1;
+            background: #fff;
+            border: 2px solid #E8E7E3;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .tool-name {
+            font-size: 32px;
+            font-weight: 900;
+            color: #111;
+            border-bottom: 2px solid #E8E7E3;
+            padding-bottom: 15px;
+        }
+
+        .list-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #5E6AD2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .list {
+            list-style: none;
+            font-size: 18px;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .list li::before {
+            content: "•";
+            color: #5E6AD2;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+        }
+
+        .verdict-box {
+            background: #111;
+            color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .verdict-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #E8E7E3;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .verdict-text {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="badge">{{BADGE}}</div>
+        <div class="title">{{HOOK}}</div>
+        <div class="context">{{CONTEXT}}</div>
+    </div>
+
+    <div class="split-container">
+        <div class="card">
+            <div class="tool-name">{{TOOL_A_NAME}}</div>
+            <div>
+                <div class="list-title">Strengths</div>
+                <ul class="list">
+                    <li>{{TOOL_A_STRENGTH_1}}</li>
+                    <li>{{TOOL_A_STRENGTH_2}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="tool-name">{{TOOL_B_NAME}}</div>
+            <div>
+                <div class="list-title">Strengths</div>
+                <ul class="list">
+                    <li>{{TOOL_B_STRENGTH_1}}</li>
+                    <li>{{TOOL_B_STRENGTH_2}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="verdict-box">
+        <div class="verdict-title">THE VERDICT</div>
+        <div class="verdict-text">{{VERDICT}}</div>
+    </div>
+</body>
+
+</html>

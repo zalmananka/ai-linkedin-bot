@@ -1,0 +1,16 @@
+{
+    "angle_name": "Daily AI News",
+    "primary_purpose": "Inform and analyze real-time industry shifts",
+    "required_sections": [
+        "NEWS HOOK: Grab attention without clickbait",
+        "WHAT HAPPENED: State the facts from the RSS source",
+        "WHY IT MATTERS: Explain the business or technical impact",
+        "KEY DETAILS: Provide up to 3 bullet points of evidence",
+        "WHAT DEVELOPERS SHOULD KNOW: The actionable takeaway"
+    ],
+    "tone_rules": [
+        "No hype words (revolutionary, game-changer)",
+        "Be objective and technical",
+        "Do not invent facts"
+    ]
+}

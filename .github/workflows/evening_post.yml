@@ -1,0 +1,39 @@
+name: Evening Matrix Post
+
+on:
+  schedule:
+    - cron: '0 13 * * *' # 1:00 PM UTC = 6:00 PM PKT
+  workflow_dispatch:
+
+jobs:
+  run-evening-bot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # State file update karne ki permission
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          npx puppeteer browsers install chrome
+
+      - name: Run Evening Workflow
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: node evening_workflow.js
+
+      - name: Commit and Push Updated State
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/state.json
+          git commit -m "🤖 Auto-update Matrix State [skip ci]" || echo "No changes to commit"
+          git push

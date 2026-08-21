@@ -1,0 +1,13 @@
+{
+    "type": "case_study",
+    "linkedin_caption": "Full post text outlining the problem, the shift, and the result.",
+    "visual_data": {
+        "badge": "CASE STUDY",
+        "title": "Main title of the study",
+        "problem": "The original pain point",
+        "old_approach": "How it was being done (Before)",
+        "the_change": "What was implemented (The Shift)",
+        "result": "Quantitative or qualitative outcome (After)",
+        "lesson": "Key lesson learned"
+    }
+}

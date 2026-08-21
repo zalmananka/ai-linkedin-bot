@@ -1,0 +1,17 @@
+{
+    "angle_name": "Incident / Lessons Learned",
+    "primary_purpose": "Extract engineering lessons from a recent tech failure or outage",
+    "required_sections": [
+        "HOOK: Name the incident and the scale of the impact",
+        "WHAT HAPPENED: Factual summary of the outage/breach",
+        "ROOT CAUSE: The technical failure (e.g., API misconfiguration, untracked bug)",
+        "TIMELINE: Sequence of events",
+        "LESSONS: What the engineering community must learn from this",
+        "TAKEAWAY: A warning or best practice reminder"
+    ],
+    "tone_rules": [
+        "No sensationalism or fear-mongering",
+        "Focus strictly on the engineering breakdown and post-mortem",
+        "Maintain a blameless, educational tone"
+    ]
+}

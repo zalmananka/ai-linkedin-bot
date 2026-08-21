@@ -1,0 +1,35 @@
+{
+    "type": "comparison",
+    "linkedin_caption": "Full post text here including hook, context, and CTA.",
+    "visual_data": {
+        "badge": "TOOLS COMPARISON",
+        "hook": "Short punchy hook",
+        "context": "Why are we comparing these?",
+        "subject_a": {
+            "name": "Tool A Name",
+            "strengths": [
+                "Point 1",
+                "Point 2"
+            ],
+            "weaknesses": [
+                "Point 1",
+                "Point 2"
+            ]
+        },
+        "subject_b": {
+            "name": "Tool B Name",
+            "strengths": [
+                "Point 1",
+                "Point 2"
+            ],
+            "weaknesses": [
+                "Point 1",
+                "Point 2"
+            ]
+        },
+        "best_for_a": "When to use A",
+        "best_for_b": "When to use B",
+        "verdict": "Final verdict in one sentence",
+        "takeaway": "Key takeaway"
+    }
+}

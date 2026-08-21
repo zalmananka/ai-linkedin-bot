@@ -1,0 +1,17 @@
+{
+    "angle_name": "Tools Comparison",
+    "primary_purpose": "Help developers choose the right tool by providing an unbiased technical breakdown",
+    "required_sections": [
+        "HOOK: State the two tools or frameworks being compared",
+        "CONTEXT: Why is this comparison relevant right now?",
+        "TOOL A: Core strengths and main architectural weaknesses",
+        "TOOL B: Core strengths and main architectural weaknesses",
+        "VERDICT: A clear, opinionated recommendation on when to use which",
+        "TAKEAWAY: One-line summary for developers"
+    ],
+    "tone_rules": [
+        "Be highly technical and objective",
+        "Avoid saying 'both are good', give definitive use-cases based on project scale",
+        "Focus on performance, testing speed, and integration"
+    ]
+}

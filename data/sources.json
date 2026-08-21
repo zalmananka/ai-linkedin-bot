@@ -1,0 +1,21 @@
+{
+    "Morning_AI": [
+        "https://techcrunch.com/category/artificial-intelligence/feed/"
+    ],
+    "Cybersecurity_Cloud": [
+        "https://feeds.feedburner.com/TheHackersNews",
+        "https://krebsonsecurity.com/feed/"
+    ],
+    "Software_Architecture": [
+        "https://hnrss.org/frontpage?points=100",
+        "https://www.freecodecamp.org/news/rss/"
+    ],
+    "Quality_Engineering": [
+        "https://applitools.com/blog/feed.xml",
+        "https://www.lambdatest.com/blog/feed/"
+    ],
+    "Data_Engineering": [
+        "https://www.dataengineeringweekly.com/feed",
+        "https://towardsdatascience.com/feed"
+    ]
+}

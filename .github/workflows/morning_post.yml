@@ -1,0 +1,29 @@
+name: Morning AI News Post
+
+on:
+  schedule:
+    - cron: '0 4 * * *' # 4:00 AM UTC = 9:00 AM PKT
+  workflow_dispatch: # Button se manually chalane ke liye
+
+jobs:
+  run-morning-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: |
+          npm install
+          npx puppeteer browsers install chrome
+
+      - name: Run Morning Workflow
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: node morning_workflow.js

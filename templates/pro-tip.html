@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;900&family=Instrument+Serif:ital@1&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #F8F7F3;
+            width: 1080px;
+            height: 1080px;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            color: #111;
+        }
+
+        .badge {
+            background: #D9785B;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 16px;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .title {
+            font-size: 65px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-top: 25px;
+            letter-spacing: -1px;
+        }
+
+        .problem-box {
+            background: #fff;
+            border-left: 8px solid #D9785B;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .box-label {
+            font-size: 14px;
+            font-weight: 800;
+            color: #D9785B;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .problem-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .solution-box {
+            background: #111;
+            color: #fff;
+            padding: 40px;
+            margin-top: 30px;
+            border-radius: 15px;
+            flex-grow: 1;
+        }
+
+        .solution-label {
+            font-size: 14px;
+            font-weight: 800;
+            color: #489953;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .solution-text {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .steps {
+            list-style-type: decimal;
+            font-size: 22px;
+            font-weight: 500;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: #E8E7E3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="badge">{{BADGE}}</div>
+    <div class="title">{{TITLE}}</div>
+
+    <div class="problem-box">
+        <div class="box-label">The Common Mistake</div>
+        <div class="problem-text">{{PROBLEM}}</div>
+    </div>
+
+    <div class="solution-box">
+        <div class="solution-label">The Better Approach</div>
+        <div class="solution-text">{{RECOMMENDED_APPROACH}}</div>
+        <ol class="steps">
+            <li>{{STEP_1}}</li>
+            <li>{{STEP_2}}</li>
+            <li>{{STEP_3}}</li>
+        </ol>
+    </div>
+</body>
+
+</html>

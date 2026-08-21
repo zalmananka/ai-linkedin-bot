@@ -1,0 +1,19 @@
+{
+  "last_run_date": "2026-08-20",
+  "matrix_state": {
+    "topic_index": 2,
+    "angle_index": 0
+  },
+  "topics": [
+    "Cybersecurity_Cloud",
+    "Software_Architecture",
+    "Quality_Engineering",
+    "Data_Engineering"
+  ],
+  "angles": [
+    "Tools & Technology Comparison",
+    "Architecture / Pro Tip",
+    "Incident / Lessons Learned",
+    "Case Study / Anti-Pattern"
+  ]
+}

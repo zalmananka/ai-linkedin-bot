@@ -1,0 +1,16 @@
+{
+    "angle_name": "Case Study / Anti-Pattern",
+    "primary_purpose": "Showcase a real-world engineering problem and its quantifiable solution",
+    "required_sections": [
+        "HOOK: State the final impressive result (e.g., 'Reduced load time by 60%')",
+        "PROBLEM: The original pain point or bottleneck",
+        "OLD APPROACH: How it was being done before (The Anti-Pattern)",
+        "THE CHANGE: The architectural or tool shift that was implemented",
+        "RESULT: The quantifiable outcome (speed, cost, bug reduction)",
+        "LESSON: The core principle proven by this case study"
+    ],
+    "tone_rules": [
+        "Data-driven and analytical",
+        "Focus on the 'Why' behind the change, not just the 'What'"
+    ]
+}

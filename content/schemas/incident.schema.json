@@ -1,0 +1,23 @@
+{
+    "type": "incident",
+    "linkedin_caption": "Full post text summarizing the incident and lessons, with CTA.",
+    "visual_data": {
+        "badge": "INCIDENT REPORT",
+        "hook": "Attention-grabbing hook",
+        "incident_title": "Name of the breach/outage",
+        "what_happened": "Brief summary",
+        "attack_vector": "How did it happen?",
+        "root_cause": "The underlying failure",
+        "impact": "Data lost, downtime, or cost",
+        "timeline": [
+            "Event 1",
+            "Event 2",
+            "Event 3"
+        ],
+        "lessons": [
+            "Lesson 1 for developers",
+            "Lesson 2 for developers"
+        ],
+        "takeaway": "Final thought"
+    }
+}

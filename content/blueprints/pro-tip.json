@@ -1,0 +1,16 @@
+{
+    "angle_name": "Architecture Pro Tip",
+    "primary_purpose": "Correct a common development or testing mistake with actionable advice",
+    "required_sections": [
+        "HOOK: Call out a common anti-pattern (e.g., poor state management in React)",
+        "PROBLEM: Why this approach fails at scale or causes bugs",
+        "SOLUTION: The recommended architectural shift",
+        "STEPS: 3 concrete, actionable steps to implement the fix",
+        "TAKEAWAY: The business or performance value of this fix"
+    ],
+    "tone_rules": [
+        "Direct and authoritative",
+        "Focus on clean code, scalability, or QA automation best practices",
+        "Do not use generic advice; be specific to modern stacks"
+    ]
+}

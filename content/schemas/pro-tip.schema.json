@@ -1,0 +1,18 @@
+{
+    "type": "pro_tip",
+    "linkedin_caption": "Full post text here including context, explanation, and CTA.",
+    "visual_data": {
+        "badge": "BEST PRACTICE",
+        "title": "Main title of the tip",
+        "problem": "What is the common mistake?",
+        "why_it_matters": "Why does this fail?",
+        "recommended_approach": "The better way to do it",
+        "steps": [
+            "Step 1 description",
+            "Step 2 description",
+            "Step 3 description"
+        ],
+        "example": "Short code or concept example",
+        "takeaway": "One-line summary"
+    }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1A1A1A;
+            width: 1080px;
+            height: 1080px;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            border: 15px solid #E63946;
+        }
+
+        .badge {
+            background: #E63946;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 16px;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .title {
+            font-size: 60px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-top: 25px;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #CCC;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        .timeline {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-left: 4px solid #333;
+            padding-left: 30px;
+            margin-left: 20px;
+            flex-grow: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -42px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: #E63946;
+            border-radius: 50%;
+        }
+
+        .t-label {
+            font-size: 14px;
+            font-weight: 800;
+            color: #E63946;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .t-text {
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .lesson-box {
+            background: #fff;
+            color: #111;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .lesson-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: #E63946;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .lesson-text {
+            font-size: 24px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="badge">{{BADGE}}</div>
+    <div class="title">{{INCIDENT_TITLE}}</div>
+    <div class="subtitle">{{WHAT_HAPPENED}}</div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="t-label">Attack Vector / Failure</div>
+            <div class="t-text">{{ATTACK_VECTOR}}</div>
+        </div>
+        <div class="timeline-item">
+            <div class="t-label">Root Cause</div>
+            <div class="t-text">{{ROOT_CAUSE}}</div>
+        </div>
+        <div class="timeline-item">
+            <div class="t-label">Impact</div>
+            <div class="t-text">{{IMPACT}}</div>
+        </div>
+    </div>
+
+    <div class="lesson-box">
+        <div class="lesson-title">THE ENGINEERING LESSON</div>
+        <div class="lesson-text">{{LESSON_1}}</div>
+    </div>
+</body>
+
+</html>

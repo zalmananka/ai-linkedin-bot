@@ -1,0 +1,19 @@
+{
+    "Cybersecurity_Cloud": [
+        {
+            "idea": "Why Zero Trust Architecture is replacing traditional VPNs",
+            "angles": [
+                "Tools & Technology Comparison",
+                "Architecture / Pro Tip"
+            ]
+        }
+    ],
+    "Software_Architecture": [
+        {
+            "idea": "When Microservices become a trap: Why monolithic architecture is sometimes better",
+            "angles": [
+                "Case Study / Anti-Pattern"
+            ]
+        }
+    ]
+}
